@@ -43,7 +43,7 @@ export const skillGroups = [
 export const projects = [
   {
     slug: "foody",
-    title: "Foody",
+    title: "foody",
     type: "Food Delivery Platform",
     liveUrl: "https://foody-frontend-4i7t.onrender.com/",
     description:
@@ -76,7 +76,7 @@ export const projects = [
   },
   {
     slug: "quip-vault",
-    title: "Quip-Vault",
+    title: "quip-vault",
     type: "Serverless Content App",
     liveUrl: "https://quip-vault.vercel.app/",
     description:
@@ -97,7 +97,7 @@ export const projects = [
   },
   {
     slug: "contextual-chat-system",
-    title: "Contextual Chat System",
+    title: "U_SOCKET",
     type: "E-commerce Messaging Feature",
     liveUrl: "https://contextual-chat-system.vercel.app/",
     description:
@@ -138,7 +138,7 @@ export const projects = [
   },
   {
     slug: "portfolio-platform",
-    title: "Portfolio Platform",
+    title: "Portfolio",
     type: "Personal Brand Site",
     liveUrl: "https://portfolio-platform.vercel.app/",
     description:

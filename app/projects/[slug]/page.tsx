@@ -141,7 +141,7 @@ export default async function ProjectPage(
                 ) : null}
                 {githubUrl ? (
                   <a
-                    href={githubUrl}
+                    href={"https://github.com/kelvin-hash/"+project.title}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-900 transition hover:border-stone-950 hover:bg-stone-950 hover:text-white"
