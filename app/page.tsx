@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HomeActionButton } from "./components/home-action-button";
 import {
   certificates,
   education,
-  projectCount,
   projects,
   skillGroups,
 } from "./data/portfolio";
@@ -149,38 +149,29 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-6">
-            <div className="flex items-center justify-center rounded-[2rem] border border-amber-100 bg-white/90 p-8 shadow-[0_24px_70px_rgba(120,53,15,0.06)]">
-              <div className="flex h-56 w-56 items-center justify-center rounded-full border-4 border-dashed border-amber-200 bg-[linear-gradient(180deg,_#fffdf8_0%,_#fff4df_100%)] text-center text-sm font-medium uppercase tracking-[0.2em] text-amber-700">
-                Your Photo
-              </div>
-            </div>
-            <div className="rounded-[2rem] border border-amber-100 bg-white/90 p-8 text-stone-900 shadow-[0_24px_70px_rgba(120,53,15,0.06)]">
-              <p className="text-sm uppercase tracking-[0.35em] text-amber-700">
-                Snapshot
-              </p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
-                <div className="rounded-3xl bg-amber-50 p-5">
-                  <p className="text-4xl font-semibold text-stone-950">6</p>
-                  <p className="mt-2 text-sm text-stone-600">
-                    Skill groups covering frontend, backend, databases, tools,
-                    and automation.
-                  </p>
+          <div>
+            <div className="relative overflow-hidden rounded-[2rem] border border-amber-100 bg-white/90 p-6 shadow-[0_24px_70px_rgba(120,53,15,0.06)]">
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.18),_transparent_70%)]" />
+              <div className="relative mx-auto max-w-sm">
+                <div className="rounded-[2rem] border border-white/90 bg-[linear-gradient(180deg,_#fff9ef_0%,_#fff3df_100%)] p-3 shadow-[0_20px_50px_rgba(120,53,15,0.12)]">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[1.6rem] bg-stone-100">
+                    <Image
+                      src="/dp.jpeg"
+                      alt="Portrait of Kelvin"
+                      fill
+                      priority
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 100vw"
+                    />
+                  </div>
                 </div>
-                <div className="rounded-3xl bg-stone-50 p-5">
-                  <p className="text-4xl font-semibold text-stone-950">
-                    {projectCount}
+                <div className="mt-4 rounded-[1.5rem] border border-amber-100 bg-white/95 px-5 py-4 shadow-[0_14px_35px_rgba(120,53,15,0.08)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-700">
+                    Kelvin Mungai
                   </p>
-                  <p className="mt-2 text-sm text-stone-600">
-                    Featured projects across web apps, real-time systems, and
-                    RPA.
-                  </p>
-                </div>
-                <div className="rounded-3xl bg-amber-50 p-5">
-                  <p className="text-4xl font-semibold text-stone-950">2026</p>
-                  <p className="mt-2 text-sm text-stone-600">
-                    BSc IT graduation target with hands-on engineering and
-                    automation experience.
+                  <p className="mt-2 text-sm leading-6 text-stone-600">
+                    Full-stack engineer focused on reliable product delivery,
+                    real-time systems, and practical automation.
                   </p>
                 </div>
               </div>
@@ -219,9 +210,9 @@ export default function Home() {
                   {group.title}
                 </h4>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {group.items.map((item) => (
+                  {group.items.map((item, index) => (
                     <span
-                      key={item}
+                      key={`${group.title}-${item}-${index}`}
                       className="rounded-full border border-amber-200 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-700"
                     >
                       {item}
